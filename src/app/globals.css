@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: LabsAmiga, sans-serif;
+}
+
+
+
+
+/* CSS for the cuts on the bottom left and bottom right */
+/* .clip-cut-corners {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 15% 100%, 0% 85%);
+} */
