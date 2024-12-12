@@ -40,7 +40,7 @@ export default function Home() {
           VYRA
         </h1>
         <p className="text-2xl text-gray-800 mt-4 tracking-wide">
-          Explore the race within you
+          Explore the race within youu !
         </p>
       </div>
 
