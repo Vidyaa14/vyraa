@@ -28,56 +28,88 @@ const ListedClubsPage = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading clubs...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-lg text-gray-600">Loading clubs...</div>
+      </div>
+    );
   }
 
   return (
-    <div className="grid grid-cols-3 gap-4 p-6">
-      {clubs.map((club) => (
-        <div
-          key={club.club_id}
-          className="border border-gray-300 p-4 rounded shadow-sm hover:shadow-md transition"
-        >
-          {/* Club Image */}
-          {club.club_img && club.club_img.length > 0 ? (
-            <Image
-              src={club.club_img[0]} // Display the first image of the club
-              alt={club.name}
-              width={200}
-              height={200}
-              className="rounded mb-2"
-            />
-          ) : (
-            <div className="h-40 bg-gray-200 flex items-center justify-center rounded mb-2">
-              <span>No Image</span>
-            </div>
-          )}
+    <div className="p-6 bg-[#ededed] min-h-screen">
+      <h1 className="text-3xl font-bold mt-24 text-center text-gray-800 mb-10">
+        Explore Listed Clubs
+      </h1>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {clubs.map((club) => (
+          <div
+            key={club.club_id}
+            className="border hover:scale-105 p-6 hover:shadow-lg hover:border-red-400 border-gray-300 text-black p-4 rounded shadow-sm hover:shadow-md transition rounded-xl "
+          >
+            {/* Club Image */}
+            {club.club_img && club.club_img.length > 0 ? (
+              <Image
+                src={club.club_img[0]} // Display the first image of the club
+                alt={club.name}
+                width={300}
+                height={200}
+                className="rounded-t-lg object-cover"
+              />
+            ) : (
+              <div className="h-48 bg-gray-200 flex items-center justify-center rounded-t-lg">
+                <span className="text-gray-600">No Image</span>
+              </div>
+            )}
 
-          {/* Club Details */}
-          <h3 className="text-lg font-semibold">{club.name}</h3>
-          <p className="text-sm text-gray-500">{club.description || 'No description available'}</p>
-          <p className="text-sm mt-2">
-            <strong>Organizer:</strong> {club.organizer_name || 'Unknown'}
-          </p>
-          <p className="text-sm">
-            <strong>Sports Taught:</strong> {club.sports_taught.join(', ') || 'N/A'}
-          </p>
-          <p className="text-sm">
-            <strong>Location:</strong>{' '}
-            {club.location?.address || 'Location not specified'}
-          </p>
-          <p className="text-sm">
-            <strong>Contact:</strong>{' '}
-            {club.contact_numbers.length > 0 ? club.contact_numbers.join(', ') : 'No contact info'}
-          </p>
-          <p className="text-sm">
-            <strong>Members:</strong> {club.member_count}
-          </p>
-          <p className="text-sm">
-            <strong>Created At:</strong> {new Date(club.created_at).toLocaleDateString()}
-          </p>
-        </div>
-      ))}
+            {/* Club Details */}
+            <div className="p-4">
+              <h3 className="text-xl font-semibold text-black mb-2">
+                {club.name}
+              </h3>
+              <p className="text-sm text-black line-clamp-2 mb-4">
+                {club.description || 'No description available'}
+              </p>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-gray-500">🏅</span>
+                <span className="text-sm text-black ">
+                  <strong>Sports Taught:</strong>{' '}
+                  {club.sports_taught.join(', ') || 'N/A'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-gray-500">📍</span>
+                <span className="text-sm text-black">
+                  <strong>Location:</strong>{' '}
+                  {club.location?.address || 'Location not specified'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-gray-500">📞</span>
+                <span className="text-sm text-black">
+                  <strong>Contact:</strong>{' '}
+                  {club.contact_numbers.length > 0
+                    ? club.contact_numbers.join(', ')
+                    : 'No contact info'}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-gray-500">👥</span>
+                <span className="text-sm text-black">
+                  <strong>Members:</strong> {club.member_count}
+                </span>
+              </div>
+              <div className="text-sm text-black">
+                <strong>Created At:</strong>{' '}
+                {new Date(club.created_at).toLocaleDateString()}
+              </div>
+            </div>
+            <button className="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded transition mt-4">
+              Join Club
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
