@@ -15,7 +15,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        
+
         <nav className="fixed top-0 left-0 right-0 bg-[#e4e4e4] text-gray-800 px-4 py-6 border-b border-[#9e9e9e] z-50 navbar">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo */}
@@ -50,13 +50,22 @@ const Navbar = () => {
 
                 {/* Links */}
                 <ul
-                    className={`absolute md:relative top-16 md:top-auto left-0 right-0 md:flex md:items-center md:space-x-4 bg-[#e4e4e4] md:bg-transparent p-4 md:p-0 z-40 transform ${
-                        isMenuOpen ? 'block' : 'hidden'
-                    } md:block`}
+                    className={`absolute md:relative top-16 md:top-auto left-0 right-0 md:flex md:items-center md:space-x-4 bg-[#e4e4e4] md:bg-transparent p-4 md:p-0 z-40 transform ${isMenuOpen ? 'block' : 'hidden'
+                        } md:block`}
                 >
                     <li className="md:inline">
                         <Link href="/about" className="block md:inline text-gray-800 hover:text-gray-600">
                             About
+                        </Link>
+                    </li>
+                    <li className="md:inline">
+                        <Link href="/Events" className="block md:inline text-gray-800 hover:text-gray-600">
+                            Events
+                        </Link>
+                    </li>
+                    <li className="md:inline">
+                        <Link href="/Clubs" className="block md:inline text-gray-800 hover:text-gray-600">
+                            Clubs
                         </Link>
                     </li>
                     <li className="md:inline">
@@ -74,11 +83,6 @@ const Navbar = () => {
                             Contact
                         </Link>
                     </li>
-                    <li className="md:inline">
-                        <Link href="/Events" className="block md:inline text-gray-800 hover:text-gray-600">
-                            Events
-                        </Link>
-                    </li>
                 </ul>
 
                 {/* Conditional Rendering: Profile Icon or Join Button */}
@@ -91,18 +95,18 @@ const Navbar = () => {
                         </Link>
                     ) : (
                         <Link href="/join">
-  <button
-    className="bg-red-600 text-black px-6 py-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
-    style={{
-      clipPath: "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
-      borderRadius: "5px",
-      border: "1px solid red", // Default border is transparent
-    }}
-  >
-    Join Now
-  </button>
-</Link>
- )}
+                            <button
+                                className="bg-red-600 text-black px-6 py-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
+                                style={{
+                                    clipPath: "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
+                                    borderRadius: "5px",
+                                    border: "1px solid red", // Default border is transparent
+                                }}
+                            >
+                                Join Now
+                            </button>
+                        </Link>
+                    )}
                 </div>
             </div>
 

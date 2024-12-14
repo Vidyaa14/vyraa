@@ -103,7 +103,7 @@ export default function Home() {
           />
         </div>
         <video
-          src="assets/aiAnalysis.mp4"
+          src="assets/analysis.mp4"
           autoPlay
           loop
           muted
