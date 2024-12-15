@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { sendOTP, resendOTP, verifyOTP, registerUser, checkUsername } from '../lib/apiClient';
+import { useState, useEffect } from 'react';
+import { sendOTP, verifyOTP, registerUser, checkUsername } from '../lib/apiClient';
 import { FaGoogle, FaFacebook, FaApple } from 'react-icons/fa';
 
 const JoinPage = () => {
@@ -68,26 +68,29 @@ const JoinPage = () => {
 
     return (
         <>
-            <div className="relative w-full min-h-screen">
-                {/* Grid Background */}
+            <div className="relative w-full min-h-screen dark:bg-gray-900 dark:text-white">
+                {/* Grid Background with separate styles for light and dark themes */}
                 <div
                     className="absolute top-0 left-0 w-full h-full grid grid-cols-4 gap-0 min-h-screen"
-                    style={{ gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))", zIndex: -1 }}
+                    style={{
+                        gridTemplateRows: "repeat(auto-fill, minmax(200px, 1fr))",
+                        zIndex: -1,
+                    }}
                 >
                     {Array.from({ length: 8 }).map((_, index) => (
                         <div
                             key={index}
-                            className={`border-r border-b border-[#9e9e9e] ${index % 4 === 3 ? "border-r-0" : ""} ${
-                                index >= 40 ? "border-b-0" : ""
-                            } aspect-square`}
+                            className={`border-r border-b dark:border-gray-700 border-[#9e9e9e] ${
+                                index % 4 === 3 ? "border-r-0" : ""
+                            } ${index >= 40 ? "border-b-0" : ""} aspect-square`}
                         />
                     ))}
                 </div>
 
                 {/* Box Overlaying on the Grid */}
-                <div className="relative max-w-md mx-auto p-6 bg-gray-100 shadow-lg rounded-3xl h-auto mb-20 mt-40 z-10">
-                    <h1 className="text-xl font-bold mb-4 text-black text-center">VYRA WELCOMES YOU!</h1>
-                    <h1 className="text-xl mt-2 mb-4 text-black text-center">JOIN VYRA</h1>
+                <div className="relative max-w-md mx-auto p-6 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-3xl h-auto mb-20 mt-40 z-10">
+                    <h1 className="text-xl font-bold mb-4 text-black dark:text-white text-center">VYRA WELCOMES YOU!</h1>
+                    <h1 className="text-xl mt-2 mb-4 text-black dark:text-white text-center">JOIN VYRA</h1>
                     {error && <p className="text-red-500">{error}</p>}
 
                     {step === 1 && (
@@ -97,11 +100,11 @@ const JoinPage = () => {
                                 value={contact}
                                 onChange={(e) => setContact(e.target.value)}
                                 placeholder="Enter your email or phone number"
-                                className="w-full p-2 border rounded mb-4 text-black"
+                                className="w-full p-2 border rounded mb-4 text-black dark:text-white dark:bg-gray-600"
                             />
                             <button
                                 onClick={handleSendOTP}
-                                className="w-full bg-red-600 text-black hover:bg-green-600 p-2 rounded"
+                                className="w-full bg-red-600 text-black dark:bg-red-500 dark:text-white hover:bg-green-600 p-2 rounded"
                             >
                                 Send OTP
                             </button>
@@ -115,7 +118,7 @@ const JoinPage = () => {
                                 value={otp}
                                 onChange={(e) => setOtp(e.target.value)}
                                 placeholder="Enter OTP"
-                                className="w-full p-2 border rounded mb-4"
+                                className="w-full p-2 border rounded mb-4 dark:text-white dark:bg-gray-600"
                             />
                             <button
                                 onClick={handleVerifyOTP}
@@ -137,14 +140,14 @@ const JoinPage = () => {
                                     if (!valid) setError('Username already taken');
                                 }}
                                 placeholder="Choose a username"
-                                className="w-full p-2 border rounded mb-4"
+                                className="w-full p-2 border rounded mb-4 dark:text-white dark:bg-gray-600"
                             />
                             <input
                                 type="text"
                                 value={userData.name}
                                 onChange={(e) => setUserData({ ...userData, name: e.target.value })}
                                 placeholder="Your full name"
-                                className="w-full p-2 border rounded mb-4"
+                                className="w-full p-2 border rounded mb-4 dark:text-white dark:bg-gray-600"
                             />
                             <button
                                 onClick={handleRegister}
@@ -159,9 +162,9 @@ const JoinPage = () => {
 
                     {/* Social Media Sign Up Buttons */}
                     <div className="my-4 flex items-center">
-                        <hr className="flex-grow border-t border-gray-300" />
-                        <span className="mx-2 text-gray-500">OR</span>
-                        <hr className="flex-grow border-t border-gray-300" />
+                        <hr className="flex-grow border-t border-gray-300 dark:border-gray-600" />
+                        <span className="mx-2 text-gray-500 dark:text-white">OR</span>
+                        <hr className="flex-grow border-t border-gray-300 dark:border-gray-600" />
                     </div>
                     <div className="flex flex-col justify-center">
                         <button className="w-full bg-red-500 text-white p-2 rounded flex items-center justify-center">

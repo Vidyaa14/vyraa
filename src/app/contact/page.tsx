@@ -8,9 +8,9 @@ const ContactPage = () => {
           />
         ))}
          <div className=" absolute items-center py-24 px-12">
-        <h1 className="text-5xl text-center text-black font-semibold ml-48 mt-16 mb-4">We’re here When you need us !</h1>
+        <h1 className="text-5xl text-center text-black font-semibold ml-48 mt-16 mb-4 dark:text-white ">We’re here When you need us !</h1>
         
-        <p className=" absolute text-xl text-black ml-52">
+        <p className=" absolute text-xl text-black dark:text-white ml-52">
           Please leave us a message. Our team will contact you as soon as possible.
         </p>
         

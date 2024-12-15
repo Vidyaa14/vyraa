@@ -12,6 +12,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --stroke-color: #1a1a1a; 
   }
 }
 
@@ -32,6 +33,15 @@ body {
   font-family: LabsAmiga, sans-serif;
 }
 
+
+
+/* Dark mode styles */
+.dark body {
+  background-color: #1a202c;
+  color: #ffffff;
+  --stroke-color: #ffffff;
+  
+}
 
 
 

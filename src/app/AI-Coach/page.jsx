@@ -57,19 +57,19 @@ export default function AICoach() {
 
       <div className=" absolute p-6 max-w-4xl mx-auto text-center ml-48 mt-4 mb-4">
         {/* Section for AI Coach heading */}
-        <h1 className="text-4xl mt-24 text-black font-bold mb-4 animate__animated animate__fadeInUp">
+        <h1 className="text-4xl mt-24 text-black dark:text-white font-bold mb-4 animate__animated animate__fadeInUp">
           AI Coach
         </h1>
 
         {/* Information about AI Coach */}
         <div className="mb-8">
-          <p className="text-lg text-black mb-4">
+          <p className="text-lg dark:text-white text-black mb-4">
             AI Coach is a cutting-edge tool designed to analyze your performance in various physical activities, with a focus on running. Using advanced machine learning algorithms, AI Coach can process videos of your runs, providing valuable insights into your form, technique, and performance.
           </p>
-          <p className="text-lg text-black mb-4">
+          <p className="text-lg text-black dark:text-white mb-4">
             The AI analyzes the video in real-time, breaking down key parameters such as running speed, stride length, cadence, body posture, and more. With this data, the AI provides personalized feedback on how you can improve your performance, avoid injuries, and maximize your training effectiveness.
           </p>
-          <p className="text-lg text-black mb-4">
+          <p className="text-lg text-black dark:text-white mb-4">
             Whether you're a professional athlete or a fitness enthusiast, AI Coach can take your training to the next level.
           </p>
         </div>
@@ -87,23 +87,23 @@ export default function AICoach() {
         </div>
 
         {/* Centered "Try AI Coach" Text */}
-        <h2 className="text-2xl font-bold text-black mb-8">
+        <h2 className="text-2xl font-bold dark:text-white text-black mb-8">
           Unlock Your Potential with AI Coach: Analyze and Enhance Your Performance!
         </h2>
 
         {/* Upload Section */}
         <div className="mb-6">
-          <label className="block mb-2 justify-center text-lg text-black font-medium">Upload Running Video:</label>
+          <label className="block mb-2 justify-center text-lg text-black dark:text-white font-medium">Upload Running Video:</label>
           <input
             type="file"
             accept="video/*"
             onChange={handleFileChange}
-            className="border p-2 w-full max-w-[400px] mx-auto text-black ml-40"
+            className="border p-2 w-full max-w-[400px] mx-auto dark:text-white text-black ml-40"
           />
         </div>
         <button
           onClick={handleUpload}
-          className="bg-red-600 text-black px-4 py-2 rounded"
+          className="bg-red-600 text-black dark:text-white px-4 py-2 rounded"
           disabled={loading}
         >
           {loading ? "Analyzing..." : "Upload and Analyze"}
@@ -112,7 +112,7 @@ export default function AICoach() {
         {/* Display performance analysis if available */}
         {analysisData && (
           <div className="mt-8">
-            <h2 className="text-xl text-black font-bold mb-4">Performance Analysis</h2>
+            <h2 className="text-xl text-black font-bold dark:text-white mb-4">Performance Analysis</h2>
             <div className="grid grid-cols-2 gap-4">
               {analysisData.parameters.map((param, index) => (
                 <div key={index} className="p-4 border rounded">
