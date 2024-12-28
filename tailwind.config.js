@@ -12,6 +12,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      fontFamily: {
+        claven: ['Claven', 'serif'], // Add Claven font
+        
+      },
     },
   },
   plugins: [],

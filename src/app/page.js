@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { FaGooglePlay, FaAppStore, FaGlobe } from "react-icons/fa"; // Import icons
 
 export default function Home() {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -30,24 +31,24 @@ export default function Home() {
 
       {/* Text Overlay */}
       <div
-  className={`absolute inset-0 flex flex-col items-center justify-start -mt-10 top-[20vh] ${
-    isAnimating ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
-  }`}
->
-  <h1
-    className="text-[25vw] font-bold leading-none tracking-wider text-transparent"
-    style={{
-      WebkitTextStroke: "2px var(--stroke-color)", // Apply stroke color dynamically based on the theme
-      textStroke: "2px var(--stroke-color)",
-    }}
-  >
-    VYRA
-  </h1>
-  <p className="text-2xl text-gray-800 dark:text-white mt-4 tracking-wide">
-    Explore the race within youu!
-  </p>
-</div>
-
+        className={`absolute inset-0 flex flex-col justify-start -mt-10 top-[20vh] ${
+          isAnimating ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
+        }`}
+      >
+        <h1
+          className="text-[7vw] font-bold leading-none tracking-wider text-transparent mt-8 ml-10 text-left"
+          style={{
+            WebkitTextStroke: "2px var(--stroke-color)",
+            textStroke: "2px var(--stroke-color)",
+          }}
+        >
+          <p className="font-claven">
+            EXPLORE THE <br />
+            RACE WITHIN <br />
+            YOU!
+          </p>
+        </h1>
+      </div>
 
       {/* Buttons */}
       <div
@@ -57,7 +58,7 @@ export default function Home() {
         style={{ top: "40vh", height: "30vh" }}
       >
         <button
-          className="bg-red-600 text-black dark:text-white px-6 py-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
+          className="bg-red-600 text-black dark:text-white px-6 py-2 flex items-center space-x-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
           style={{
             clipPath:
               "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
@@ -66,10 +67,11 @@ export default function Home() {
           }}
           onClick={() => router.push("/page1")}
         >
-          Play Store
+          <FaGooglePlay size={20} />
+          <span>Play Store</span>
         </button>
         <button
-          className="bg-red-600 text-black dark:text-white px-6 py-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
+          className="bg-red-600 text-black dark:text-white px-6 py-2 flex items-center space-x-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
           style={{
             clipPath:
               "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
@@ -78,10 +80,11 @@ export default function Home() {
           }}
           onClick={() => router.push("/page2")}
         >
-          App Store
+          <FaAppStore size={20} />
+          <span>App Store</span>
         </button>
         <button
-          className="bg-red-600 text-black dark:text-white px-6 py-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
+          className="bg-red-600 text-black dark:text-white px-6 py-2 flex items-center space-x-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
           style={{
             clipPath:
               "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
@@ -90,7 +93,8 @@ export default function Home() {
           }}
           onClick={() => router.push("/page3")}
         >
-          Web App
+          <FaGlobe size={20} />
+          <span>Web App</span>
         </button>
       </div>
 
@@ -124,13 +128,13 @@ export default function Home() {
           className="w-full aspect-video object-cover rounded-lg shadow px-4"
         />
         <h1
-          className="text-[23vw] font-bold leading-none tracking-wider text-black dark:text-white mt-30 ml-14"
+          className="text-[23vw] font-bold leading-none tracking-wider text-black dark:text-white mt-30"
           style={{
             WebkitTextStroke: "1px #1a1a1a",
             textStroke: "1px #1a1a1a",
           }}
         >
-          VYRA
+          <div className="font-claven ">V Y R A</div>
         </h1>
       </div>
     </div>

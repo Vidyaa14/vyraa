@@ -3,10 +3,46 @@
 @tailwind utilities;
 
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
+
+@font-face {
+  font-family: 'Claven';
+  src: url('/public/fonts/claven/Claven.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Salveation';
+  src: url('/public/fonts/salveation_serif/Salveation\ Serif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Salveation-1';
+  src: url('/public/fonts/salveation_serif/Salveation\ Serif.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Samantha';
+  src: url('/public/fonts/samantha_3/Samantha\ Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sanshiro';
+  src: url('/public/fonts/sanshiro/SanshiroDemo/SanshiroDemo-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
