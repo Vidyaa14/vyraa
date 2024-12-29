@@ -45,7 +45,7 @@ export default function Home() {
           <p className="font-claven">
             EXPLORE THE <br />
             RACE WITHIN <br />
-            YOU!
+            <div className="ml-52">YOU!</div>
           </p>
         </h1>
       </div>
