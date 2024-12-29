@@ -96,37 +96,23 @@ export default function Home() {
           <FaGlobe size={20} />
           <span>Web App</span>
         </button>
+
+        
+
       </div>
 
-      {/* Videos */}
-      <div
-        className={`absolute inset-x-0 bottom-[20vh] flex flex-col items-center space-y-4 ${
-          isAnimating ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
-        }`}
-      >
-        <div className="flex justify-center space-x-4 w-full px-4">
+      <div className="  flex justify-center mb-160">
           <video
-            src="assets/start.mp4"
+            className="w-full md:w-4/5 lg:w-3/4 h-auto border rounded-lg"
             autoPlay
             loop
             muted
-            className="w-[50%] aspect-square object-cover rounded-lg shadow"
-          />
-          <video
-            src="assets/start.mp4"
-            autoPlay
-            loop
-            muted
-            className="w-[50%] aspect-square object-cover rounded-lg shadow"
+            playsInline
+            src="/assets/earth.mp4"
           />
         </div>
-        <video
-          src="assets/analysis.mp4"
-          autoPlay
-          loop
-          muted
-          className="w-full aspect-video object-cover rounded-lg shadow px-4"
-        />
+      
+        
         <h1
           className="text-[23vw] font-bold leading-none tracking-wider text-black dark:text-white mt-30"
           style={{
@@ -136,7 +122,7 @@ export default function Home() {
         >
           <div className="font-claven ">V Y R A</div>
         </h1>
-      </div>
+     
     </div>
   );
 }

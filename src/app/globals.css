@@ -16,32 +16,7 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Salveation';
-  src: url('/public/fonts/salveation_serif/Salveation\ Serif.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Salveation-1';
-  src: url('/public/fonts/salveation_serif/Salveation\ Serif.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Samantha';
-  src: url('/public/fonts/samantha_3/Samantha\ Demo.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'sanshiro';
-  src: url('/public/fonts/sanshiro/SanshiroDemo/SanshiroDemo-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 
 @media (prefers-color-scheme: dark) {
@@ -80,6 +55,23 @@ body {
 }
 
 
+.video {
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.iphone-mockup {
+  position: relative;
+  margin-top: 100vh; /* Ensure it appears after scrolling */
+  width: 300px; /* iPhone width */
+  height: 600px; /* iPhone height */
+  background: transparent;
+}
 
 /* CSS for the cuts on the bottom left and bottom right */
 /* .clip-cut-corners {
