@@ -36,7 +36,7 @@ export default function Home() {
         }`}
       >
         <h1
-          className="text-[7vw] font-bold leading-none tracking-wider text-transparent mt-8 ml-10 text-left"
+          className="text-[7vw] sm:text-[10vw] md:text-[7vw] font-bold leading-none tracking-wider text-transparent mt-8 ml-10 text-left"
           style={{
             WebkitTextStroke: "2px var(--stroke-color)",
             textStroke: "2px var(--stroke-color)",
@@ -45,20 +45,20 @@ export default function Home() {
           <p className="font-claven">
             EXPLORE THE <br />
             RACE WITHIN <br />
-            <div className="ml-52">YOU!</div>
+            <div className="ml-52 sm:ml-28 lg:ml-12">YOU!</div>
           </p>
         </h1>
       </div>
 
       {/* Buttons */}
       <div
-        className={`absolute inset-x-0 flex items-center justify-center space-x-40 mt-[40vh] ${
+        className={`absolute inset-x-0 flex items-center justify-center space-x-40 sm:space-y-0 sm:space-x-2 lg:space-x-40 mt-[40vh] ${
           isAnimating ? "opacity-100 transition-opacity duration-1000" : "opacity-0"
         }`}
         style={{ top: "40vh", height: "30vh" }}
       >
         <button
-          className="bg-red-600 text-black dark:text-white px-6 py-2 flex items-center space-x-2 hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
+          className="bg-red-600 text-black dark:text-white px-6 py-2 flex items-center space-x-2  hover:bg-[#e4e4e4] hover:text-black hover:border-black border-2"
           style={{
             clipPath:
               "polygon(10% 0%, 99% 0%, 100% 70%, 100% 70%, 90% 100%, 1% 100%, 0% 30%)",
@@ -101,7 +101,7 @@ export default function Home() {
 
       </div>
 
-      <div className="  flex justify-center mb-160">
+      <div className="  flex justify-center mb-160 sm:my-16">
           <video
             className="w-full md:w-4/5 lg:w-3/4 h-auto border rounded-lg"
             autoPlay
@@ -114,7 +114,7 @@ export default function Home() {
       
         
         <h1
-          className="text-[23vw] font-bold leading-none tracking-wider text-black dark:text-white mt-30"
+          className="text-[23vw] sm:ml-4 sm:text-[22vw] md:text-[16vw] font-bold leading-none tracking-wider text-black dark:text-white mt-30"
           style={{
             WebkitTextStroke: "1px #1a1a1a",
             textStroke: "1px #1a1a1a",
